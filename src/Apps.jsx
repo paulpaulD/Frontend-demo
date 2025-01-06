@@ -2,17 +2,18 @@ import  React from 'react';
 import Create from './Create';
 import Update from './Update';
 import User from './User';
+import './Apps.css'
 import { BrowserRouter as Router, Routes, Route,Link } from 'react-router-dom';
 
 function Apps(){
     return(
-        <div>
+        <div className='container'>
            <Router>
             <nav>
-                <ul>
-                    <li><Link to ="/Create">Create</Link></li>
-                    <li><Link to ="/Update">Update</Link></li>
-                    <li><Link to ="/User">User</Link></li>
+                <ul className='nav-links'>
+                    <li><Link to ="/Create" className='link'>Create</Link></li>
+                  
+                    <li><Link to ="/User" className='link'>User</Link></li>
 
                 </ul>
             </nav>

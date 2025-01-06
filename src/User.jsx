@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Create from './Create';
 import {Link,useNavigate} from 'react-router-dom';
 import axios from 'axios';
+import './Apps.css'
 
 function User() {
     const nav=useNavigate();
@@ -28,9 +29,11 @@ function User() {
     }
 
     return (
-        <div>
-            <h1>User</h1><br/><br/>
-            <Link to='/Create'>Create User</Link><br/><br/>
+        <div className='container'>
+            <h1>User DataBase Content:<br/><br/></h1>
+            <h4>Create User :
+            <Link to='/Create'className='link'> Click here.</Link><br/><br/></h4>
+            
             <table>
                 <thead>
                     <tr>
@@ -47,7 +50,7 @@ function User() {
                             <td>{users.email}</td>
                             <td>{users.address}</td>
                             <td><Link to={`/Update/${users._id}`}>update</Link>
-                            <button onClick={(e)=>deleteUser(users._id)}>delete</button></td>
+                            <button className="dbutton"onClick={(e)=>deleteUser(users._id)}>delete</button></td>
 
                         </tr>
                     ))}

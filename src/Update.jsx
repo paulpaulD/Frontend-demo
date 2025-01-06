@@ -1,6 +1,7 @@
 import  React, { useState } from 'react';
 import axios from 'axios';
 import { useParams,useNavigate  } from 'react-router-dom';
+import './Apps.css'
 
 function Update(){
     const nav=useNavigate();
@@ -20,18 +21,18 @@ const updateUser =(e)=>{
     .catch(err=>{console.log("error while updateing")})
 }
     return(
-        <div>
-            <h1>Updating</h1><br/>
+        <div className='cntainer'>
+            <h1>Update Data Here :</h1><br/>
             <form onSubmit={Update}>
-                <lable>Name</lable>
+                <lable className="lable">Name</lable>
                 <input type='text'value={name} onChange={(e)=>setName(e.target.value)}></input> <br/><br/>
 
-                <lable>Email</lable>
+                <lable className="lable">Email</lable>
                 <input type='email' value={email} onChange={(e)=>setEmail(e.target.value)}></input><br/><br/>
 
-                <lable>Address</lable>
+                <lable className="lable">Address</lable>
                 <input type='text'value={address} onChange={(e)=>setAddress(e.target.value)}></input><br/><br/>
-                <button onClick={updateUser}>Update</button>
+                <button className="buttonc" onClick={updateUser}>Update</button>
             </form>
         </div>
     )
